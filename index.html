@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy birthday, my little friend</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preview">
+        <img id="gif" src="https://tgs.sgp1.digitaloceanspaces.com/MDUDVideo/stuck_out_tongue_closed_eyes_bcbc40d2.gif" class="clickable-gif" alt="" >
+        <button id="pmb" >Включить музыку</button>
+      </div> 
+    <img src="https://media.tenor.com/289MFdl0w0QAAAAi/balloons-happy-birthday-balloons.gif" class="ggg" alt="">
+    <audio id="bmus" src="https://my-pony.ru/images/stories/mp3/pesnja_krokodila_geny.mp3"></audio>
+    
+    </div>
+<h1 id="happytext" class="happy">
+    <span style="-t: 4s" class="h">H</span>
+    <span style="-t: 4.2s">A</span>
+    <span style="-t: 4.4s">P</span>
+    <span style="-t: 4.6s">P</span>
+    <span style="-t: 4.8s">Y</span> <br>
+   
+    <span class="new-line" style="-t: 4s">B</span>
+    <span style="-t: 4.2s">I</span>
+    <span style="-t: 4.4s">R</span>
+    <span style="-t: 4.6s">T</span>
+    <span style="-t: 4.8s">H</span>
+    <span style="-t: 5s">D</span>
+    <span style="-t: 5.2s">A</span>
+    <span style="-t: 5.4s">Y</span> <br>
+    </h1>
+    <h1 class="my">
+    <span  style="-t: 5.8s">m</span>
+    <span style="-t: 6s">y</span>
+    &nbsp;
+    <span style="-t: 6.2s">l</span>
+    <span style="-t: 6.4s">i</span>
+    <span style="-t: 6.6s">t</span>
+    <span style="-t: 6.8s">t</span> 
+    <span style="-t: 7s">l</span>
+    <span style="-t: 7.2s">e</span>
+    &nbsp;
+    <span style="-t: 7.4s">f</span>
+    <span style="-t: 7.6s">r</span>
+
+    <span style="-t: 7.8s">i</span>
+    <span style="-t: 8s">e</span>
+
+    <span style="-t: 8.2s">n</span>
+    <span style="-t: 8.4s">d</span>
+
+    
+
+</h1>
+
+<p id="cgt" class="sub-text" >включи музыку потом кликай на гифку</p>
+
+
+  <div class="container">
+    <!-- Радио-кнопки для переключения -->
+    <input type="radio" name="steps" id="step1" checked>
+    <input type="radio" name="steps" id="step2">
+    <input type="radio" name="steps" id="step3">
+
+    <!-- Первая секция -->
+    <div class="content content1">
+      <p>Желаю тебе быть настолько крутым, чтобы даже твои ошибки превращались в легенды </p>
+      <img src="https://tgs.sgp1.digitaloceanspaces.com/kotiki_20f5_by_offstikbot/kissing_heart_38f9efef.gif" alt="">
+    </div>
+
+    <!-- Вторая секция -->
+    <div class="content content2">
+      <p> Пусть удача и успех сопровождают тебя, как верные фанаты(например, как я)</p>
+      <img src="https://tgs.sgp1.digitaloceanspaces.com/kotiki_20f5_by_offstikbot/heart_55bc2d1a.gif" alt="GIF 2">
+    </div>
+        <div class="content content3">
+      <p> И чтоб скука, уныние и плохое настроение обходят тебя стороной, потому что для легенд места нет в мелочах</p>
+      <img src="https://tgs.sgp1.digitaloceanspaces.com/kotiki_20f5_by_offstikbot/12915950.gif" alt="GIF 2">
+  
+    </div>
+
+
+    <!-- Кнопки переключения -->
+    <label for="step1" class="button">кликни, мальчик</label>
+    <label for="step2" class="button">и сюда тоже</label>
+    <label for="step3" class="button">и сюда</label>
+  </div>
+</body>
+
+<script>
+const playBtn = document.getElementById('pmb');
+const audio = document.getElementById('bmus');
+
+playBtn.addEventListener('click', () => {
+  audio.play();
+
+});
+
+
+    function typeText(container) {
+  if (!container) return;
+  const p = container.querySelector("p");
+  if (!p) return;
+  if (p.dataset.typed === "true") return; // Уже напечатан
+  const fullText = p.textContent;
+  p.textContent = "";
+  let i = 0;
+  function type() {
+    if (i < fullText.length) {
+      p.textContent += fullText[i];
+      i++;
+      setTimeout(type, 50); // скорость печати
+    } else {
+      p.dataset.typed = "true";
+    }
+  }
+  type();
+}
+
+// Обработчики переключения секций
+document.getElementById('step1').addEventListener('change', () => {
+  typeText(document.querySelector('.content1'));
+});
+document.getElementById('step2').addEventListener('change', () => {
+  typeText(document.querySelector('.content2'));
+});
+document.getElementById('step3').addEventListener('change', () => {
+  typeText(document.querySelector('.content3'));
+});
+document.getElementById("gif").addEventListener("click", function() {
+  document.getElementById("cgt").style.display = "none";
+
+});
+
+
+// Печать первой секции при загрузке
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const gif = document.querySelector('.clickable-gif');
+  const container = document.querySelector('.container');
+  const preview = document.querySelector('.preview');
+
+  gif.addEventListener('click', function() {
+    preview.style.display = 'none';
+    container.style.display = 'flex';
+    typeText(document.querySelector('.content1'));
+  });
+});
+</script>
+</html>
